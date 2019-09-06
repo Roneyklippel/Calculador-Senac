@@ -1,0 +1,240 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/txtVisor"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="#778899"
+            android:gravity="right"
+            android:text="123456789"
+            android:textColor="#FFFFFF"
+            android:textSize="@dimen/tamanho_texto_visor" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btC"
+            style="@style/estiloBotoesOutros"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="C"
+            android:textSize="@dimen/tamanho_texto_botoes" />
+
+        <Button
+            android:id="@+id/btMaisMenos"
+            style="@style/estiloBotoesOutros"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="+/-"
+            android:textSize="@dimen/tamanho_texto_botoes" />
+
+        <Button
+            android:id="@+id/btPorcentagem"
+            style="@style/estiloBotoesOutros"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="%"
+            android:textSize="@dimen/tamanho_texto_botoes" />
+
+        <Button
+            android:id="@+id/btDividir"
+            style="@style/estiloBotoesOperacoes"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="÷"
+            android:textSize="@dimen/tamanho_texto_botoes" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btSete"
+            style="@style/estiloBotoesNumeros"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="7"
+            android:textSize="@dimen/tamanho_texto_botoes" />
+
+        <Button
+            android:id="@+id/btOito"
+            style="@style/estiloBotoesNumeros"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="8"
+            android:textSize="@dimen/tamanho_texto_botoes" />
+
+        <Button
+            android:id="@+id/btNove"
+            style="@style/estiloBotoesNumeros"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="9"
+            android:textSize="@dimen/tamanho_texto_botoes" />
+
+        <Button
+            android:id="@+id/btMultiplicar"
+            style="@style/estiloBotoesOperacoes"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="X"
+            android:textSize="@dimen/tamanho_texto_botoes" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btQuatro"
+            style="@style/estiloBotoesNumeros"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="4"
+            android:textSize="@dimen/tamanho_texto_botoes" />
+
+        <Button
+            android:id="@+id/btCinco"
+            style="@style/estiloBotoesNumeros"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="5"
+            android:textSize="@dimen/tamanho_texto_botoes" />
+
+        <Button
+            android:id="@+id/btSeis"
+            style="@style/estiloBotoesNumeros"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="6"
+            android:textSize="@dimen/tamanho_texto_botoes" />
+
+        <Button
+            android:id="@+id/btMenus"
+            style="@style/estiloBotoesOperacoes"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="-"
+            android:textSize="@dimen/tamanho_texto_botoes" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btUm"
+            style="@style/estiloBotoesNumeros"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="1"
+            android:textSize="@dimen/tamanho_texto_botoes" />
+
+        <Button
+            android:id="@+id/btDois"
+            style="@style/estiloBotoesNumeros"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="2"
+            android:textSize="@dimen/tamanho_texto_botoes" />
+
+        <Button
+            android:id="@+id/btTres"
+            style="@style/estiloBotoesNumeros"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="3"
+            android:textSize="@dimen/tamanho_texto_botoes" />
+
+        <Button
+            android:id="@+id/btSoma"
+            style="@style/estiloBotoesOperacoes"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="+"
+            android:textSize="@dimen/tamanho_texto_botoes" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btI"
+            style="@style/estiloBotoesOutros"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="i"
+            android:textSize="@dimen/tamanho_texto_botoes" />
+
+        <Button
+            android:id="@+id/btZero"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="0"
+            android:textSize="@dimen/tamanho_texto_botoes"
+            style="@style/estiloBotoesNumeros" />
+
+        <Button
+            android:id="@+id/btVigula"
+            style="@style/estiloBotoesOutros"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text=","
+            android:textSize="@dimen/tamanho_texto_botoes" />
+
+        <Button
+            android:id="@+id/btIgual"
+            style="@style/estiloBotoesOperacoes"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="="
+            android:textSize="@dimen/tamanho_texto_botoes" />
+    </LinearLayout>
+</LinearLayout>
