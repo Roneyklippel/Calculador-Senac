@@ -120,7 +120,33 @@ public class MainActivity extends AppCompatActivity {
         btnSoma.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                txtVisor.setText(visor=visor +"+");
+               // txtVisor.setText(visor=visor +"+");
+
+                if (visor.endsWith("-")){
+                    // recebendo o corte do visor
+                    String operacao = visor.substring(0, visor.length() -1);
+                    //subistituindo o sinal  do visor
+                    visor = operacao + "";
+                    txtVisor.setText(visor);
+
+
+
+                }if (visor.endsWith("x")) {
+                    // recebendo o corte do visor
+                    String operacao = visor.substring(0, visor.length() - 1);
+                    //subistituindo o sinal  do visor
+                    visor = operacao + "";
+                    txtVisor.setText(visor);
+
+                }if (visor.endsWith("÷")) {
+                    // recebendo o corte do visor
+                    String operacao = visor.substring(0, visor.length() - 1);
+                    //subistituindo o sinal  do visor
+                    visor = operacao + "+";
+                    txtVisor.setText(visor);
+                }else {
+                    txtVisor.setText(visor=visor +"+");
+                }
             }
         });
 
@@ -128,22 +154,37 @@ public class MainActivity extends AppCompatActivity {
         btnMenos.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                txtVisor.setText(visor=visor +"-");
+                // txtVisor.setText(visor=visor +"-");
 
          // endsWith faz a busca no visor do sinal +
          // visor.substring corta as casa para localizar a posiçao do sinal,começando a conta do "0"
          //visor.length() me passa qual a ultima posição do visor, mais como coeça a contagem do numero "0" acrescentamos o  -1
 
-             if (visor.endsWith("+")){
+                 if (visor.endsWith("+")){
                  // recebendo o corte do visor
                  String operacao = visor.substring(0, visor.length() -1);
                  //subistituindo o sinal  do visor
-                 visor = operacao + "-";
+                 visor = operacao + "";
                  txtVisor.setText(visor);
 
 
 
-             }
+             }if (visor.endsWith("x")) {
+                    // recebendo o corte do visor
+                    String operacao = visor.substring(0, visor.length() - 1);
+                    //subistituindo o sinal  do visor
+                    visor = operacao + "";
+                    txtVisor.setText(visor);
+
+                }if (visor.endsWith("÷")) {
+                    // recebendo o corte do visor
+                    String operacao = visor.substring(0, visor.length() - 1);
+                    //subistituindo o sinal  do visor
+                    visor = operacao + "-";
+                    txtVisor.setText(visor);
+                }else {
+                     txtVisor.setText(visor=visor +"-");
+                 }
 
 
             }
@@ -154,15 +195,66 @@ public class MainActivity extends AppCompatActivity {
         btnMultiplicar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                txtVisor.setText(visor=visor +"x");
+               // txtVisor.setText(visor=visor +"x");
 
+                if (visor.endsWith("+")){
+                    // recebendo o corte do visor
+                    String operacao = visor.substring(0, visor.length() -1);
+                    //subistituindo o sinal  do visor
+                    visor = operacao + "";
+                    txtVisor.setText(visor);
+
+
+
+                }if (visor.endsWith("-")) {
+                    // recebendo o corte do visor
+                    String operacao = visor.substring(0, visor.length() - 1);
+                    //subistituindo o sinal  do visor
+                    visor = operacao + "";
+                    txtVisor.setText(visor);
+
+                }if (visor.endsWith("÷")) {
+                    // recebendo o corte do visor
+                    String operacao = visor.substring(0, visor.length() - 1);
+                    //subistituindo o sinal  do visor
+                    visor = operacao + "x";
+                    txtVisor.setText(visor);
+                }else {
+                    txtVisor.setText(visor=visor +"x");
+                }
             }
         });
         final Button btnDividir = (Button) findViewById(R.id.btnDividir);
         btnDividir.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                txtVisor.setText(visor=visor +"÷");
+                //txtVisor.setText(visor=visor +"÷");
+
+                if (visor.endsWith("+")){
+                    // recebendo o corte do visor
+                    String operacao = visor.substring(0, visor.length() -1);
+                    //subistituindo o sinal  do visor
+                    visor = operacao + "";
+                    txtVisor.setText(visor);
+
+
+
+                }if (visor.endsWith("x")) {
+                    // recebendo o corte do visor
+                    String operacao = visor.substring(0, visor.length() - 1);
+                    //subistituindo o sinal  do visor
+                    visor = operacao + "";
+                    txtVisor.setText(visor);
+
+                }if (visor.endsWith("-")) {
+                    // recebendo o corte do visor
+                    String operacao = visor.substring(0, visor.length() - 1);
+                    //subistituindo o sinal  do visor
+                    visor = operacao + "÷";
+                    txtVisor.setText(visor);
+                }else {
+                    txtVisor.setText(visor=visor +"÷");
+                }
             }
         });
 

@@ -1,7 +1,7 @@
 package es.br.senac.calculadora;
 
 public class Calculadora {
-
+//declarando as variaveis
     private double operando;
     private double  operandoAnterior;
     private String operadorAnterior;
