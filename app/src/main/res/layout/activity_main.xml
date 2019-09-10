@@ -57,12 +57,12 @@
             android:textSize="@dimen/tamanho_texto_botoes" />
 
         <Button
-            android:id="@+id/btnDell"
+            android:id="@+id/btnDel"
             style="@style/estiloBotoesOutros"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="18.75"
-            android:text="Dell"
+            android:text="Del"
             android:textSize="14sp" />
 
         <Button

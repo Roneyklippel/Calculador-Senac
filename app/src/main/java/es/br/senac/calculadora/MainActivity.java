@@ -72,6 +72,7 @@ public class MainActivity extends AppCompatActivity {
                 txtVisor.setText(visor=visor +"5");
             }
         });
+
         final Button btnSeis = (Button) findViewById(R.id.btnSeis);
         btnSeis.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -79,6 +80,7 @@ public class MainActivity extends AppCompatActivity {
                 txtVisor.setText(visor=visor +"6");
             }
         });
+
         final Button btnSete = (Button) findViewById(R.id.btnSete);
 
         btnSete.setOnClickListener(new View.OnClickListener() {
@@ -96,6 +98,7 @@ public class MainActivity extends AppCompatActivity {
                 txtVisor.setText(visor=visor +"8");
             }
         });
+
         final Button btnNove = (Button) findViewById(R.id.btnNove);
         btnNove.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -103,13 +106,16 @@ public class MainActivity extends AppCompatActivity {
                 txtVisor.setText(visor=visor +"9");
             }
         });
+
         final Button btnC = (Button) findViewById(R.id.btnC);
         btnC.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                txtVisor.setText("");
+                visor = "";
+                txtVisor.setText(visor);
             }
         });
+
         final Button btnSoma = (Button) findViewById(R.id.btnSoma);
         btnSoma.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -117,13 +123,33 @@ public class MainActivity extends AppCompatActivity {
                 txtVisor.setText(visor=visor +"+");
             }
         });
+
         final Button btnMenos = (Button) findViewById(R.id.btnMenus);
         btnMenos.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 txtVisor.setText(visor=visor +"-");
+
+         // endsWith faz a busca no visor do sinal +
+         // visor.substring corta as casa para localizar a posiçao do sinal,começando a conta do "0"
+         //visor.length() me passa qual a ultima posição do visor, mais como coeça a contagem do numero "0" acrescentamos o  -1
+
+             if (visor.endsWith("+")){
+                 // recebendo o corte do visor
+                 String operacao = visor.substring(0, visor.length() -1);
+                 //subistituindo o sinal  do visor
+                 visor = operacao + "-";
+                 txtVisor.setText(visor);
+
+
+
+             }
+
+
             }
         });
+
+
         final Button btnMultiplicar = (Button) findViewById(R.id.btnMultiplicar);
         btnMultiplicar.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -141,7 +167,20 @@ public class MainActivity extends AppCompatActivity {
         });
 
 
+        final Button btnDel = (Button) findViewById(R.id.btnDel);
+        btnDel.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String del = visor.substring(0, visor.length() -1);
+                visor=del;
+                txtVisor.setText(visor);
 
+                if(visor.length() ==0){
+                    visor="";
+                    txtVisor.setText(visor);
+                }
+            }
+        });
 
 
 
