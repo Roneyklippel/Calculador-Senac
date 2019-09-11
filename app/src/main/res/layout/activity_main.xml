@@ -35,6 +35,7 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="18.75"
+            android:onClick="onClickOperacoes"
             android:text="C"
             android:textSize="@dimen/tamanho_texto_botoes" />
 
@@ -44,6 +45,7 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="18.75"
+            android:onClick="onClickOperacoes"
             android:text="+/-"
             android:textSize="@dimen/tamanho_texto_botoes" />
 
@@ -53,6 +55,7 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="18.75"
+            android:onClick="onClickOperacoes"
             android:text="%"
             android:textSize="@dimen/tamanho_texto_botoes" />
 
@@ -62,6 +65,7 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="18.75"
+            android:onClick="onClickOperacoes"
             android:text="Del"
             android:textSize="14sp" />
 
@@ -71,6 +75,7 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="25"
+            android:onClick="onClickOperacoes"
             android:text="÷"
             android:textSize="@dimen/tamanho_texto_botoes" />
     </LinearLayout>
@@ -87,6 +92,7 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
+            android:onClick="onClickNumeros"
             android:text="7"
             android:textSize="@dimen/tamanho_texto_botoes" />
 
@@ -96,6 +102,7 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
+            android:onClick="onClickNumeros"
             android:text="8"
             android:textSize="@dimen/tamanho_texto_botoes" />
 
@@ -105,6 +112,7 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
+            android:onClick="onClickNumeros"
             android:text="9"
             android:textSize="@dimen/tamanho_texto_botoes" />
 
@@ -115,7 +123,8 @@
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:text="X"
-            android:textSize="@dimen/tamanho_texto_botoes" />
+            android:textSize="@dimen/tamanho_texto_botoes"
+            android:onClick="onClickOperacoes" />
     </LinearLayout>
 
     <LinearLayout
@@ -130,6 +139,7 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
+            android:onClick="onClickNumeros"
             android:text="4"
             android:textSize="@dimen/tamanho_texto_botoes" />
 
@@ -139,6 +149,7 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
+            android:onClick="onClickNumeros"
             android:text="5"
             android:textSize="@dimen/tamanho_texto_botoes" />
 
@@ -148,6 +159,7 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
+            android:onClick="onClickNumeros"
             android:text="6"
             android:textSize="@dimen/tamanho_texto_botoes" />
 
@@ -157,6 +169,7 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
+            android:onClick="onClickOperacoes"
             android:text="-"
             android:textSize="@dimen/tamanho_texto_botoes" />
     </LinearLayout>
@@ -173,6 +186,7 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
+            android:onClick="onClickNumeros"
             android:text="1"
             android:textSize="@dimen/tamanho_texto_botoes" />
 
@@ -182,6 +196,7 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
+            android:onClick="onClickNumeros"
             android:text="2"
             android:textSize="@dimen/tamanho_texto_botoes" />
 
@@ -191,6 +206,7 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
+            android:onClick="onClickNumeros"
             android:text="3"
             android:textSize="@dimen/tamanho_texto_botoes" />
 
@@ -200,6 +216,7 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
+            android:onClick="onClickOperacoes"
             android:text="+"
             android:textSize="@dimen/tamanho_texto_botoes" />
     </LinearLayout>
@@ -216,6 +233,7 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
+            android:onClick="onClickOperacoes"
             android:text="i"
             android:textSize="@dimen/tamanho_texto_botoes" />
 
@@ -226,7 +244,8 @@
             android:layout_weight="1"
             android:text="0"
             android:textSize="@dimen/tamanho_texto_botoes"
-            style="@style/estiloBotoesNumeros" />
+            style="@style/estiloBotoesNumeros"
+            android:onClick="onClickNumeros" />
 
         <Button
             android:id="@+id/btnVigula"
@@ -234,6 +253,7 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
+            android:onClick="onClickOperacoes"
             android:text=","
             android:textSize="@dimen/tamanho_texto_botoes" />
 
@@ -243,6 +263,7 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
+            android:onClick="onClickOperacoes"
             android:text="="
             android:textSize="@dimen/tamanho_texto_botoes" />
     </LinearLayout>
