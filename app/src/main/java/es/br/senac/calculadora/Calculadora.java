@@ -18,17 +18,20 @@ public class Calculadora {
         return operando;
     }
 
-    public  void setOperando(double operando){
-        this.operando=operando;
+    public  void setOperando(double operando) {
+        this.operando= operando;
     }
+
+
     private void realizarOperacaoAnterior(){
         if (!operadorAnterior.equals("")){
             if (operadorAnterior.equals("+")){
-                operando = operandoAnterior + operando;}else if (operadorAnterior.equals("-")){
-                operando =operandoAnterior -operando;
+                operando = operandoAnterior + operando;}
+            else if (operadorAnterior.equals("-")){
+                operando =operandoAnterior - operando;
             }else if (operadorAnterior.equals("x")){
                 operando = operandoAnterior * operando;
-            }else  if (operadorAnterior.equals("÷")){
+            }else  if (operadorAnterior.equals("/")){
                 if (operando != 0){
                     operando = operandoAnterior / operando;
                 }
@@ -61,7 +64,7 @@ public class Calculadora {
         }else if (opm.equals("m-")){
             memoria -= operando;
         }else if (opm.equals("mr")){
-            operando =memoria;
+            operando = memoria;
         }
     }
 }

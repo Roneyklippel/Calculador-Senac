@@ -34,8 +34,10 @@ public class MainActivity extends AppCompatActivity {
         calc = new Calculadora();
         usuarioEstaDigitandoUmNumero = false;
         separadorDecimalFoiDigitado = false;
-        txtVisor = (TextView) findViewById(R.id.txtVisor);
+        txtVisor = (TextView)findViewById(R.id.txtVisor);
         txtVisor.setText("0");
+
+
 
         Locale localizacao = getResources().getConfiguration().locale;
         NumberFormat fomatador = NumberFormat.getInstance(localizacao);
@@ -47,11 +49,15 @@ public class MainActivity extends AppCompatActivity {
         }
         separador = String.valueOf(separadorChar);
 
+
         Button btnSeparador = (Button) findViewById(R.id.btnVigula);
         btnSeparador.setText(separador);
 
-        //Uso da fonte digital
-        final Typeface fonteDigital = Typeface.createFromAsset(this.getAssets(),"digital.ttf");
+
+
+
+    //Uso da fonte digital
+    final Typeface fonteDigital = Typeface.createFromAsset(this.getAssets(), "digital.ttf");
         txtVisor.setTypeface(fonteDigital);
 
         txtVisor.setOnClickListener(new View.OnClickListener() {
@@ -68,75 +74,97 @@ public class MainActivity extends AppCompatActivity {
             }
         });
         Toast.makeText(this,"Toque no visor para trocar sua fonte!", Toast.LENGTH_LONG).show();
-    }
 
+        final Button btnDel = (Button) findViewById(R.id.btnDel);
+         btnDel.setOnClickListener(new View.OnClickListener() {
+      @Override public void onClick(View view) {
+       if(txtVisor.getText() !=null && txtVisor.getText().toString().length()>0){
+           txtVisor.setText(txtVisor.getText().toString().substring(0,txtVisor.getText().toString().length()-1));
+       }
 
-    public void onClickNumeros(View v) {
-        Button botaoTocado = (Button) v;
-        String digito = botaoTocado.getText().toString();
+       }
+        });
+}
+        public void onClickNumeros(View v) {
+            Button botaoTocado = (Button) v;
+            String digito = botaoTocado.getText().toString();
 
-        String textoNoVisor = txtVisor.getText().toString();
+            String textoNoVisor = txtVisor.getText().toString();
 
-        if (!usuarioEstaDigitandoUmNumero || textoNoVisor.equals("0")) {
+            if (!usuarioEstaDigitandoUmNumero || textoNoVisor.equals("0")) {
 
-            txtVisor.setText(digito);
-            if (!digito.equals("0")) {
-                usuarioEstaDigitandoUmNumero = true;
-            } else {
-                txtVisor.setText(textoNoVisor + digito);
+                txtVisor.setText(digito);
+                if (!digito.equals("0")) {
+                    usuarioEstaDigitandoUmNumero = true;
+                }
+            }else {
+                    txtVisor.setText(textoNoVisor + digito);
+
+                }
             }
+
+        public void onClickOperacoes(View v) {
+            Button botaoTocado = (Button) v;
+            String operacao = botaoTocado.getText().toString();
+            //if (operacao.equals(",") && !separadorDecimalFoiDigitado)
+            if (operacao.equals(separador) && !separadorDecimalFoiDigitado) {
+                separadorDecimalFoiDigitado = true;
+                if (!usuarioEstaDigitandoUmNumero) {
+                    // txtVisor.setText("0" + ",");
+                    txtVisor.setText("0" + separador);
+                } else {
+                    // txtVisor.setText(txtVisor.getText().toString() + ",");
+                    txtVisor.setText(txtVisor.getText().toString() + separador);
+                    usuarioEstaDigitandoUmNumero = true;
+                }
+                //usuarioEstaDigitandoUmNumero = true;
+            } //else if (!operacao.equals(","))
+            else if (!operacao.equals(separador)) {
+                //String valorSemVirgula = txtVisor.getText().toString().replace(',', '.');
+                String valorSemVirgula = txtVisor.getText().toString().replace(separadorChar, '.');
+                calc.setOperando(Double.parseDouble(valorSemVirgula));
+                calc.realizarOperacao(operacao);
+
+                String textoResultado = String.valueOf(calc.getOperando());
+
+                if (textoResultado.endsWith(".0")) {
+                    textoResultado = textoResultado.substring(0, textoResultado.length() - 2);
+
+                }
+                    //txtVisor.setText(textoResultado.replace('.', ','));
+                    txtVisor.setText(textoResultado.replace('.',separadorChar));
+                    usuarioEstaDigitandoUmNumero = false;
+                    separadorDecimalFoiDigitado = false;
+                }
         }
-    }
 
-    public void onClickOperacoes(View v) {
-        Button botaoTocado = (Button) v;
-        String operacao = botaoTocado.getText().toString();
-        //if (operacao.equals(",") && !separadorDecimalFoiDigitado)
-        if (operacao.equals(separador) && !separadorDecimalFoiDigitado) {
-            separadorDecimalFoiDigitado = true;
-            if (!usuarioEstaDigitandoUmNumero) {
-               // txtVisor.setText("0" + ",");
-                txtVisor.setText("0" + separador);
-            } else {
-               // txtVisor.setText(txtVisor.getText().toString() + ",");
-                txtVisor.setText(txtVisor.getText().toString() + separador);
-                usuarioEstaDigitandoUmNumero = true;
-            }
-            //usuarioEstaDigitandoUmNumero = true;
-        } //else if (!operacao.equals(","))
-        else if (!operacao.equals(separador)) {
+
+
+
+        public void onClickMemoria(View v) {
+
+            Button botaoTocado = (Button)v;
+            String operacaoMemoria = botaoTocado.getText().toString();
             //String valorSemVirgula = txtVisor.getText().toString().replace(',', '.');
             String valorSemVirgula = txtVisor.getText().toString().replace(separadorChar, '.');
+
             calc.setOperando(Double.parseDouble(valorSemVirgula));
-            calc.realizarOperacao(operacao);
+            calc.realizaOperacaoDeMemoria(operacaoMemoria);
 
-            String textoResultado = String.valueOf(calc.getOperando());
+            usuarioEstaDigitandoUmNumero = false;
 
-            if (textoResultado.endsWith(".0")) {
-                textoResultado = textoResultado.substring(0, textoResultado.length() - 2);
-
-            } else {
-                //txtVisor.setText(textoResultado.replace('.', ','));
-                txtVisor.setText(textoResultado.replace('.',separadorChar));
-                usuarioEstaDigitandoUmNumero = false;
-                separadorDecimalFoiDigitado = false;
-            }
         }
-    }
 
-    public void onClickMemoria(View v) {
 
-        Button botaoTocado = (Button) v;
-        String operacaoMemoria = botaoTocado.getText().toString();
-        //String valorSemVirgula = txtVisor.getText().toString().replace(',', '.');
-        String valorSemVirgula = txtVisor.getText().toString().replace(separadorChar, '.');
-
-        calc.setOperando(Double.parseDouble(valorSemVirgula));
-        calc.realizaOperacaoDeMemoria(operacaoMemoria);
-
-        usuarioEstaDigitandoUmNumero = false;
 
     }
 
 
-}
+
+
+
+
+
+
+
+

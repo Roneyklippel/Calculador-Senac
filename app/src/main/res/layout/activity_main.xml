@@ -61,11 +61,9 @@
 
         <Button
             android:id="@+id/btnDel"
-            style="@style/estiloBotoesOutros"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="18.75"
-            android:onClick="onClickOperacoes"
             android:text="Del"
             android:textSize="14sp" />
 
@@ -76,7 +74,7 @@
             android:layout_height="match_parent"
             android:layout_weight="25"
             android:onClick="onClickOperacoes"
-            android:text="÷"
+            android:text="/"
             android:textSize="@dimen/tamanho_texto_botoes" />
     </LinearLayout>
 
@@ -122,7 +120,7 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:text="X"
+            android:text="x"
             android:textSize="@dimen/tamanho_texto_botoes"
             android:onClick="onClickOperacoes" />
     </LinearLayout>
