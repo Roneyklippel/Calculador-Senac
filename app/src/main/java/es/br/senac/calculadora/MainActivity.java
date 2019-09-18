@@ -1,5 +1,7 @@
 package es.br.senac.calculadora;
 
+
+
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.graphics.Typeface;
@@ -14,23 +16,43 @@ import java.text.DecimalFormatSymbols;
 import java.text.NumberFormat;
 import java.util.Locale;
 
+//declarando uma classe piblica
+//extends AppCompatActivity é uma herança de classe
+// é o nome da minha classe "MainActivity"
+// é uma herança "extends" herda tudo da  classe pai " AppCompatActivity"
+// é a classe pai  "AppCompatActivity"
 
 public class MainActivity extends AppCompatActivity {
-
+//declarando as variaveis
     private Calculadora calc;
+    //declarando as variaveis do tipo boolean (que retorna false ou true)
     private boolean usuarioEstaDigitandoUmNumero;
     private boolean separadorDecimalFoiDigitado;
+    //declarando as variavel do tipo TextView
     private TextView txtVisor;
+    //declarando as variavel do tipo String (texto)
     private String separador;
+    //declarando as variavel do tipo char ( que recebe apenas 1 caracter)
     private char separadorChar;
+// fim da declaração das variaveis
 
+    // metodo que declara o ciclo de criação da tela
+    //@Override sobre escreve um metodo herdado da classe  pai " AppCompatActivity"
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        //declaração de metodo protected (significa que o  metodo é protegido)
+        // void retorna vazio
+        //declaração de metodo onCreate (metodo herdado da classe pai "AppCompatActivity"
+        //(Bundle savedInstanceState) é o argumento do metodo onCreate
+        // quando tem super e o nome do metodo ele está indo no pai e buscando tudo que tem lá
+        //super.onCreate(savedInstanceState)  executa todos os codigos da classe pai
         super.onCreate(savedInstanceState);
+        //"setContentView(R.layout.activity_main" metodo que liga a Activity.java com o java
         setContentView(R.layout.activity_main);
 
 
+        //de
         calc = new Calculadora();
         usuarioEstaDigitandoUmNumero = false;
         separadorDecimalFoiDigitado = false;
